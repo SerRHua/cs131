@@ -1,57 +1,10 @@
-    1  wget www.github.com
-    2  history > cmds.log
-    3  cd git
-    4  history | grep git
-    5  ls
-    6  ls -la
-    7  cd
-    8  ls -la
-    9  ls -la .ssh/
-   10  mkdir .ssh
-   11  ls -la .ssh/
-   12  cd git
-   13  git clone git@github.com:SerRHua/cs131.git
-   14  ls
-   15  cd cs131/
-   16  ls
-   17  cd ws1
-   18  mv ~/cmds.log .
-   19  git add .
-   20  git status
-   21  git commit -m "ws1"
-   22  git config --global user.email "serena.huang@sjsu.edu"
-   23  git config --global user.name "Serena"
-   24  git commit -m "ws1"
-   25  git push -u origin main
-   26  git rm ws
-   27  git rm ws1/ws
-   28  git rm ws
-   29  git push -u origin main
-   30  git rm -rf ws
-   31  ls -la
-   32  git branch
-   33  git pull
-   34  ls -la
-   35  ls
-   36  wget https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Books_v1_02.tsv.gz
-   37  gunzip amazon_reviews_us_Books_v1_02.tsv.gz 
-   38  grep "\tN\t\Y" amazon_reviews_us_Books_v1_02.tsv 
-   39  grep "hi" amazon_reviews_us_Books_v1_02.tsv 
-   40  grep "\tN\t\Y" amazon_reviews_us_Books_v1_02.tsv 
-   41  grep "\tN\tY" amazon_reviews_us_Books_v1_02.tsv 
-   42  grep "\tY" amazon_reviews_us_Books_v1_02.tsv 
-   43  grep '\tY' amazon_reviews_us_Books_v1_02.tsv 
-   44  grep '\\tY' amazon_reviews_us_Books_v1_02.tsv 
-   45  egrep '\tY' amazon_reviews_us_Books_v1_02.tsv 
-   46  man grep
-   47  history
-   48  wget https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Books_v1_02.tsv.gz
-   49  gunzip amazon_reviews_us_Books_v1_02.tsv.gz 
-   50  grep -P "\t[NY]\tY\t" amazon_reviews_us_Books_v1_02.tsv 
-   51  grep -P "\t[NY]\tN\t" amazon_reviews_us_Books_v1_02.tsv 
-   52  grep -P "\t[NY]\tY\t" amazon_reviews_us_Books_v1_02.tsv | wc
-   53  grep -P "\t[NY]\tN\t" amazon_reviews_us_Books_v1_02.tsv | wc
-   54  grep -P "\t[NY]\tY\t" amazon_reviews_us_Books_v1_02.tsv | wc > counts.txt
-   55  grep -P "\t[NY]\tN\t" amazon_reviews_us_Books_v1_02.tsv | wc >> counts.txt
-   56  vi counts.txt
-   57  history > cmds.log
+    1  wget https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Books_v1_02.tsv.gz
+    2  gunzip amazon_reviews_us_Books_v1_02.tsv.gz 
+    3  grep -P "\t[NY]\tY\t" amazon_reviews_us_Books_v1_02.tsv 
+    4  grep -P "\t[NY]\tN\t" amazon_reviews_us_Books_v1_02.tsv 
+    5  grep -P "\t[NY]\tY\t" amazon_reviews_us_Books_v1_02.tsv | wc
+    6  grep -P "\t[NY]\tN\t" amazon_reviews_us_Books_v1_02.tsv | wc
+    7  grep -P "\t[NY]\tY\t" amazon_reviews_us_Books_v1_02.tsv | wc > counts.txt
+    8  grep -P "\t[NY]\tN\t" amazon_reviews_us_Books_v1_02.tsv | wc >> counts.txt
+    9  vi counts.txt
+   10  history > cmds.log
