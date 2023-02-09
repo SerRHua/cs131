@@ -1,0 +1,5 @@
+    1  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -rn | head -3 > ws3.txt
+    2  cut -f 4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -rn | head -3 >> ws3.txt
+    3  vi ws3.txt
+    4  cd git/cs131/ws3
+    5  history > cmds.log
