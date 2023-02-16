@@ -1,0 +1,28 @@
+    1  vi ~/.bashrc
+    2  . ~/.bashrc
+    3  l
+    4  w
+    5  mkdir CUSTOMERS
+    6  mkdir PRODUCTS
+    7  ls
+    8  cd ..
+    9  vi ~/.bashrc
+   10  . ~/.bashrc
+   11  l
+   12  w
+   13  mkdir CUSTOMERS
+   14  mkdir PRODUCTS
+   15  fgrep -h "49355567" amazon_reviews_us_Books_v1_02.tsv | awk -F '\t' '{print $9}' > CUSTOMERS/49355567.txt
+   16  wget https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Books_v1_02.tsv.gz
+   17  gunzip amazon_reviews_us_Books_v1_02.tsv.gz 
+   18  fgrep -h "49355567" amazon_reviews_us_Books_v1_02.tsv | awk -F '\t' '{print $9}' > CUSTOMERS/49355567.txt
+   19  cd CUSTOMERS
+   20  ls
+   21  awk '{ total += $1; count++ } END { print total/count }' 49355567.txt
+   22  cd ..
+   23  ls
+   24  fgrep -h "0811828964" amazon_reviews_us_Books_v1_02.tsv | awk -F '\t' '{print $9}' > PRODUCTS/0811828964.txt
+   25  cd PRODUCTS
+   26  ls
+   27  awk '{ total += $1; count++ } END { print total/count }' 0811828964.txt
+   28  history > cmds.log
