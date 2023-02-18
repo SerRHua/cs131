@@ -1,0 +1,56 @@
+2) What is your home directory path?  How did you find out (commands used)?
+A: My home directory path is /mnt/scratch/serena23sp. I used echo $HOME.
+    1  echo $HOME
+3) What is your UID?  To what group(s) do you belong?  How did you find out (command used)?
+A: The group is serena23sp. My uid is 1056. I used the commands groups, id serena23sp, and id -u serena23sp.
+    2  groups
+    3  id serena23sp
+    4  id -u serena23sp
+4) Create a new directory "temp". Now remove execute permission for yourself from this temp directory (see chmod man page), are you allowed to cd in that directory? Can you "ls" it?  Can you "ls -l" it? Can you create files under it?
+A: I can't cd into temp, but I can ls it and I can ls -l it. I also can't create files under it.
+    5  mkdir temp
+    6  chmod u-x temp
+    7  cd temp
+    8  ls temp
+    9  ls -l temp
+   10  touch temp/new.txt
+5) Create a new directory "temp2". Are you allowed to "mv" the directory to "temp3"? Are you allowed to "cp" a directory?  If you want to cp an entire directory, how would you do it?
+A: I can "mv" “temp2” directory to "temp3.” I can't cp a directory without the -r flag. To do that, you have to cp -R [directory to be copied] [copy of directory] to cp an entire directory.
+   11  mkdir temp2
+   12  mv temp2 temp3
+   13  cp temp3 temp4
+   14  cp temp
+   15  ls
+6) Using only "ls" (and maybe "grep"), can you find out which file under directory /proc/ contains information about memory (mem) on your server? Which file contains information about the cpu's on your server?
+A: /proc/meminfo for information about memory and /proc/cpuinfo for information about cpu
+   16  ls -l /proc/meminfo
+   17  ls -l /proc/cpuinfo 
+7) Use head to check the memory information file you found above. How much total memory is on your server?
+A: 73080640 kB
+   18  head /proc/meminfo
+8) Then use head, tail, cat to check the cpu information file you found above. How many processors are on your server? What is the processor architecture name? What is the processor speed in GHz?
+A: There are 256 total processors, and the  processor architecture name is POWER8. The  processor speed is  3.525 GHz.
+   19  head /proc/cpuinfo
+   20  tail /proc/cpuinfo 
+   21  cat /proc/cpuinfo
+9)  Copy this hashtags twitter file from this location to your A1 directory: /home/test/A1/downloaded_hashtags_extend.csv (You may not have access to the directory, but can copy the file to your home by specifying the full path. Do not push this dataset to GitHub.) What is the size in GB (GigaBytes) of the hashtags tweet dataset? How many lines does it have?
+A:The size is 0.00782218 GB, and there are 110350 lines
+   22  cp /home/test/A1/downloaded_hashtags_extend.csv .
+   23  ls -l downloaded_hashtags_extend.csv
+   24  wc -l downloaded_hashtags_extend.csv
+10) Search in the Tweets hashtags file for the case-insensitive word "great" (i.e. "Great" or "GREAT" also count). How many hashtags contain this word? You can use grep (case-insensitive) and wc.
+A: There are 29 hashtags.
+   25  cut -d ',' -f2 downloaded_hashtags_extend.csv | sort | uniq | grep -i great | wc -l
+11) Now use the file to an external site.command to check the character encoding of the dataset. What character encoding does it have?
+A: The character encoding is  UTF-8 Unicode text.
+   26  file downloaded_hashtags_extend.csv
+12) Now use the iconv to an external site.(or another) command to convert the tweet file to ascii character encoding. Search to read about ascii vs non-ascii encodings.
+A: The file ascii.txt is ASCII text.
+   27  iconv -f utf-8 -t ascii//TRANSLIT downloaded_hashtags_extend.csv > ascii.txt
+   28  file ascii.txt
+13) Check the column names in the hashtags file with the head command. How many unique users tweeted hashtags in the hashtags file (user IDs are in the first column)? How many unique tweets were tweeted in this file (tweet IDs are in the last column)? How many unique hashtags (second column) were tweeted in this file? Is it the same as the number of tweets or more or less?
+A: There are 176 unique users exluding header label, 64697 unique tweets excluding header label, and 20257 unique hashtags including the header label.
+   29  awk -F ',' '{print $1}' downloaded_hashtags_extend.csv | sort | uniq -c | wc -l
+   30  awk -F ',' '{print $4}' downloaded_hashtags_extend.csv | sort | uniq -c | wc -l
+   31  awk -F ',' '{print $2}' downloaded_hashtags_extend.csv | sort | uniq -c | wc -l
+   32  history > cmds.log
