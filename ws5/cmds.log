@@ -1,0 +1,5 @@
+    1  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -rn | head -200 | awk '{print $2}' > customer_reviews.txt
+    2  vi for_loop.sh
+    3  mkdir CUSTOMERS
+    4  bash for_loop.sh
+    5  history > cmds.log
