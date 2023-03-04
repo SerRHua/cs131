@@ -1,0 +1,15 @@
+    1  cp /home/test/A1/downloaded_tweets_extend_nolf2.tsv .
+    2  cp /home/test/A1/downloaded_tweets_extend_original_nolf2.tsv .
+
+1. Find the top 10 users who replied the most to other users (downloaded_tweets_extend_original_nolf2.tsv)
+    3  awk -F "\t" '$6!="" && $6!=$2 {print $6}' downloaded_tweets_extend_original_nolf2.tsv | sort | uniq -c | sort -nr | head -10
+
+2. Find the top 10 users who got the most replies from other users (downloaded_tweets_extend_original_nolf2.tsv)
+    4  cut -f 6 downloaded_tweets_extend_original_nolf2.tsv | grep -v "^$" | sort | uniq -c | sort -rn | head -10
+
+3. Find the top 10 users who retweeted the most other tweets (downloaded_tweets_extend_nolf2.tsv)
+    5  grep "retweeted" downloaded_tweets_extend_nolf2.tsv | cut -f 2 | sort | uniq -c | sort -rn | head
+
+4. Find the 30 hashtags used most frequently overall for anything (downloaded_tweets_extend_nolf2.tsv)
+    6  cut -f 4 downloaded_tweets_extend_nolf2.tsv | grep -v '^$' | sort | uniq -c | sort -nr | head -30
+    7  history > cmds.log
