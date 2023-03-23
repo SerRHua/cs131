@@ -129,7 +129,10 @@
 </g>
 	<g id="gnuplot_plot_1" ><title>gnuplot_plot_1</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-</g>
+	<g stroke='none' shape-rendering='crispEdges'>
+		<polygon fill = 'rgb(148,   0, 211)' points = '720.13,742.40 747.69,742.40 747.69,740.58 720.13,740.58 '/>
+	</g>
+	<path stroke='rgb(148,   0, 211)'  d='M720.13,742.40 L720.13,740.59 L747.68,740.59 L747.68,742.40 L720.13,742.40 Z  '/></g>
 	</g>
 <g fill="none" color="white" stroke="rgb(148,   0, 211)" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
