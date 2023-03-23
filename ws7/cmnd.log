@@ -1,0 +1,12 @@
+1) Collect the lines that have verified reviews, using awk.
+    1  awk -F '\t' '$12 == "Y" {print $0}' amazon_reviews_us_Books_v1_02.tsv > verified.txt
+
+2) Redirect the output into the file "verified.txt" using redirection after sorting all entries. (You don't need to push the original "verified.txt" since it's too big. Please submit "verified_head20.txt" by loading the first 20 lines of "verified.txt".) For the rest of the assignment, you should use the original verified.txt.
+    2  awk -F '\t' '$12 == "Y" {print $0}' amazon_reviews_us_Books_v1_02.tsv > verified.txt
+    3   head -n 20 verified.txt > verified_head20.txt
+
+3) Find the 10 most frequent words in the review_headline of the verified reviews, using awk. (Case insensitive) This result should be saved as a text file "top10.txt".
+    4  awk -F'\t' '{gsub(/[^a-zA-Z]/," ",$13); print $13}' verified.txt | tr 'A-Z' 'a-z' | tr ' ' '\n' | awk '{if ($0 != "") words[$0]++} END {for (w in words) print words[w],w}' | sort -rn | awk '{print $2" "$1}' | head -10 > top10.txt
+
+4) Save the command history and edit the cmnd.log file to clearly show the tasks. 
+    5  history > cmnd.log
