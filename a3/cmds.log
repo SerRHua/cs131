@@ -1,0 +1,12 @@
+1. Collect all the entries related to "replied_to" tweets. Represent the influence between users, using user IDs as follows. When user A got a reply from user B, denote it as "<user A's ID> <user B's ID>". Your output file named "task1.txt" should include lines like this: "42052422 308045021". (Hint: You will use the 2nd column and 6th column in the dataset.)
+    1  awk -F '\t' '{if($6 != "" && $6 != $2 && NR>1){print $6"  "$2}}' downloaded_tweets_extend_nolf2.tsv | sort > task1.txt
+
+2. To extract more relevant information, you want to filter out users with less influence. Here, we define the influence level of a user by the number of replies that the user received. Create a new data file "task2.txt" from "task1.txt" by only keeping the users with THREE or more replies.
+    2  awk '{count[$1]++} END{for (i in count) if (count[i] >= 3) print i}' task1.txt > task2.txt
+Plot the distribution of users by the number of replies they received, using "task2.txt". The y-axis shows the number of users and the x-axis indicates the range of the number of replies. Please set the bin size of the x-axis to 1 and 4, and generate two separate plots. (Name them h1.svg and h4.svg, respectively. You may use other extensions.)
+Note: the plot.gnu contains the things needed to plot the graph.
+    3  cp /etc/gnuplot-5.4.4/src/gnuplot .
+    4  touch plot.gnu
+    5  vi plot.gnu
+    6  ./gnuplot plot.gnu 
+    7  history > cmds.log
