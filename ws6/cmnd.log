@@ -1,13 +1,7 @@
-1) Collect the lines that have unverified reviews, using sed.
     1  sed -n '/\t[NY]\tN\t/p' amazon_reviews_us_Books_v1_02.tsv
-2) Redirect the output into the file "unverified.txt" using redirection. (You don't need to push the original "unverified.txt" since it's too big. Please submit "unverified_head20.txt" by loading the first 20 lines of "unverified.txt".) For the rest of the assignment, you should use the original unverified.txt.
     2  sed -n '/\t[NY]\tN\t/p' amazon_reviews_us_Books_v1_02.tsv > unverified.txt
     3  head -n 20 unverified.txt > unverified_head20.txt
-3) From the unverified review file, collect the lines for Product ID 1844161560 and save it as "1844161560.txt"
     4  awk -F'\t' '$4 == "1844161560" {print}' unverified.txt > 1844161560.txt
-4) Remove all commas, dots, semicolons, and the word "to" from the review_body. Save this as "1844161560_task5.txt"
-    5  sed 's/[.,;]|to //g' 1844161560.txt > 1844161560_task5.txt
-5) Remove all HTML tags, such as <br />, using sed. Save this as "1844161560_task6.txt". You can assume all tags will have the < ... /> format.
+    5  sed 's/[,.;]\|\<to\>//g' 1844161560.txt > 1844161560_task5.txt
     6  sed 's/<[^>]*>//g' 1844161560_task5.txt > 1844161560_task6.txt
-6) Save the command history and edit the cmnd.log file to clearly show the tasks. 
     7  history > cmnd.log
