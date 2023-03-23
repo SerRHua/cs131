@@ -11,8 +11,7 @@ bin(x, width) = width*floor(x/width)
 plot "task2.txt" using (bin($1,bin_width)+bin_width/2.0):(1.0) smooth freq with boxes notitle
 
 set output "h4.svg"
-set xrange [0:100]
-set yrange [0:200]
+set xrange [0:10]
+set yrange [0:20]
 bin_width = 4
 plot "task2.txt" using (bin($1,bin_width)+bin_width/2.0):(1.0) smooth freq with boxes notitle
-
