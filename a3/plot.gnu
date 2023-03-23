@@ -5,7 +5,7 @@ set output "h1.svg"
 set xlabel "Number of Replies"
 set ylabel "Number of Users"
 set xrange [0:20]
-set yrange [0:200]
+set yrange [0:100]
 set boxwidth 0.5
 set style fill solid
 bin_width = 1
@@ -16,8 +16,7 @@ plot "task1.txt" using ($2):(1.0) smooth freq with boxes lc rgb "#E69F00" title 
 set output "h4.svg"
 set xlabel "Number of Replies"
 set ylabel "Number of Users"
-set xrange [0:100]
-set yrange [0:200]
+set xrange [0:50]
+set yrange [0:100]
 bin_width = 4
 plot "task2.txt" using ($2):(1.0) smooth freq with boxes lc rgb "#56B4E9" title "Bin size of 4"
-
