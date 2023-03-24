@@ -1,5 +1,5 @@
     1  awk -F '\t' '{if($6 != "" && $6 != $2 && NR>1){print $6"  "$2}}' downloaded_tweets_extend_nolf2.tsv | sort > task1.txt
-    2  awk '{count[$1]++} END{for (i in count) if (count[i] >= 3) print i}' task1.txt > task2.txt
+    2  awk '{count[$1]++} END{for (i in count) if (count[i] >= 3) print i, count[i]}' task1.txt > task2.txt
     3  touch plot.gnu
     4  vi plot.gnu
     5  ~/gnuplot plot.gnu
