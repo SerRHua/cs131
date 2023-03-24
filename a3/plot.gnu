@@ -6,7 +6,7 @@ set ylabel "Number of Users"
 
 # First plot with bin size of 1
 set output "h1.svg"
-set xrange [0:20]
+set xrange [0:20000000]
 set yrange [0:*]
 set boxwidth 0.5
 set style fill solid
