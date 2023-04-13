@@ -1,0 +1,4 @@
+    310552 sampled
+   3105521 amazon_reviews_us_Books_v1_02.tsv
+   3416073 total
+10% of 3105521 is 310552

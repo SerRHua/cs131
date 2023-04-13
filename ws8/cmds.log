@@ -1,0 +1,6 @@
+    1  touch randomsample.sh
+    2  vi randomsample.sh 
+    3  chmod u+rx randomsample.sh 
+    4  ./randomsample.sh 10 amazon_reviews_us_Books_v1_02.tsv > sampled
+    5  history > cmds.log
+    6  wc -l sampled amazon_reviews_us_Books_v1_02.tsv > ws8.txt
