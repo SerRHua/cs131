@@ -1,0 +1,8 @@
+   80  wget https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv
+   81  mkdir test
+   82  mkdir train
+   83  touch mysplit.sh
+   84  vi mysplit.sh 
+   85  chmod +x mysplit.sh
+   86  ./mysplit.sh
+   87  history > cmds.log
