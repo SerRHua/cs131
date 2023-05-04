@@ -1,0 +1,7 @@
+Number of Entries: 478
+Features: DBN;SCHOOL NAME;Num of SAT Test Takers;SAT Critical Reading Avg. Score;SAT Math Avg. Score;SAT Writing Avg. Score
+Number of Features: 6
+Number of Test Takers Range: 6-1277
+SAT Critical Reading Avg. Score Range: 279-679
+SAT Math Avg. Score Range: 312-735
+SAT Writing Avg. Score Range: 286-682

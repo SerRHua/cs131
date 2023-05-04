@@ -11,4 +11,3 @@ set style line 1 pt 7 ps 1.5 lc rgb "blue"
 
 # Plot the data
 plot "scatter.txt" using 0:1 with points ls 1 notitle
-
