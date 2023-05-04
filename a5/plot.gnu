@@ -13,5 +13,5 @@ set boxwidth 10
 set style fill solid
 bin_width = 10
 bin(x, width) = width*floor(x/width)
-plot "2012-sat-results.csv" using (bin($3,bin_width)+bin_width/2.0):(1.0) smooth freq with boxes notitle
+plot "2012-sat-results.csv" using (bin($4,bin_width)+bin_width/2.0):(1.0) smooth freq with boxes notitle
 
